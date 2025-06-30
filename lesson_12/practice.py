@@ -64,3 +64,41 @@
 
 # Задачи на **kwargs
 
+# Напишите функцию print_attributes(**kwargs), которая принимает любые именованные
+#  аргументы и выводит их в формате "ключ: значение".
+
+# Напишите функцию create_filtered_dict(allowed_keys, **kwargs), которая создает словарь 
+# только из тех kwargs, чьи ключи есть в списке allowed_keys.
+
+# Напишите функцию update_config(config, **kwargs), которая принимает словарь config
+#  и обновляет его значениями из kwargs. Функция должна возвращать обновленный словарь.
+# Внимательно отнеситесь к копированию объекта.(подсказка)
+# Пример использования:
+# base_config = {"host": "localhost", "port": 8080, "debug": False}
+# new_config = update_config(base_config, port=9000, debug=True, user="admin")
+
+# print(f"Исходный конфиг: {base_config}")
+# print(f"Обновленный конфиг: {new_config}")
+# # Вывод:
+# # Исходный конфиг: {'host': 'localhost', 'port': 8080, 'debug': False}
+# # Обновленный конфиг: {'host': 'localhost', 'port': 9000, 'debug': True, 'user': 'admin'}
+
+# Напишите функцию build_where_clause(**conditions) для генерации части WHERE SQL-запроса.
+#  Функция должна принимать условия в виде ключ=значение и объединять их через AND.
+#  Значения-строки должны быть в одинарных кавычках.
+
+# # Пример использования:
+# query_part = build_where_clause(user_id=101, status="active", is_verified=True)
+# print(query_part)
+# Вывод: WHERE user_id = 101 AND status = 'active' AND is_verified = True
+
+# Дан список словарей с информацией о пользователях. Отсортируйте его по возрасту (age)
+#  с помощью функции sorted и лямбда-функции.
+# users = [
+#     {"name": "Иван", "age": 30},
+#     {"name": "Мария", "age": 25},
+#     {"name": "Петр", "age": 42},
+# ]
+
+# Дан список чисел. Используя filter и лямбда-функцию, создайте новый список, 
+# содержащий только четные числа, которые больше 10.
