@@ -37,3 +37,20 @@
 # Проверьте пример: организуйте три события (две встречи с пересечением и один звонок) с разными параметрами
 # Например: встреча команды в офисе, плановый звонок по проекту, встреча с клиентом в кафе
 # Проверьте методы: добавьте участников, пункты повестки, проверьте конфликтность, начните и завершите запись звонка
+
+from datetime import datetime
+
+start = datetime(2025, 6, 5, 10, 0)
+end = datetime(2025, 6, 5, 11, 0)
+
+def duration(start, end):
+    delta = end - start
+    return int(delta.total_seconds() // 60)
+
+print(duration(start, end))
+
+def conflict_with(self, other_event):
+    latest_start = max(self.start_time, other_event.start_time)
+    earliest_end = min(self.end_time, other_event.end_time)
+    overlap = (earliest_end - latest_start).total_seconds()
+    return overlap > 0
