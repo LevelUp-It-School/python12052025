@@ -192,3 +192,51 @@
 # from example_module import some_function, ExampleClass
 
 # some_function()
+
+# from some_module import *
+
+# 1. Создать класс Animal: name, species, метод display_info
+# 2. Создать подкласс Mammal: warm_blood = True; display_info и Bird: can_fly = True; display_info
+# 3. Создать класс Zoo: animals = []; add_animal, show_all_animals
+
+class Animal():
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+
+    def display_info(self):
+        print(f"{self.name} - {self.species}")
+
+class Mammal(Animal):
+    def __init__(self, name, species, warm_blood = True):
+        super().__init__(name, species)
+        self.warm_blood = warm_blood
+    def display_info(self):
+        print(f"{self.name} - {self.species} {self.warm_blood}")
+
+class Bird(Animal):
+    def __init__(self, name, species, can_fly = True):
+        super().__init__(name, species)
+        self.can_fly = can_fly
+    
+    def display_info(self):
+        print(f"{self.name} - {self.species} {self.can_fly}")
+
+class Zoo():
+    def __init__(self):
+        self.animals = []
+    
+    def add_animal(self, animal):
+        self.animals.append(animal)
+    def show_all_animals(self):
+        for animal in self.animals:
+            animal.display_info()
+
+cow = Animal("Корова", "травоядное")
+cat = Mammal("Кошка", "Хищник")
+eagle = Bird("Орел", "Хищник")
+zoo = Zoo()
+zoo.add_animal(cow)
+zoo.add_animal(eagle)
+zoo.add_animal(cat)
+zoo.show_all_animals()
