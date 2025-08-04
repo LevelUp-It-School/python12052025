@@ -1,4 +1,4 @@
-from main import resolve_tri_type
+from lesson_22.main import resolve_tri_type
 import pytest
 
 def test_resolve_tri_type():
